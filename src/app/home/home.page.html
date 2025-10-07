@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Calculadora Simple</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <ion-item>
+    <ion-label position="stacked">Número 1</ion-label>
+    <ion-input type="number" [(ngModel)]="num1"></ion-input>
+  </ion-item>
+
+  <ion-item class="ion-margin-top">
+    <ion-label position="stacked">Número 2</ion-label>
+    <ion-input type="number" [(ngModel)]="num2"></ion-input>
+  </ion-item>
+
+  <ion-button expand="block" class="ion-margin-top" (click)="calculate('sum')">
+    Sumar
+  </ion-button>
+
+  <ion-button expand="block" fill="outline" (click)="calculate('sub')">
+    Restar
+  </ion-button>
+
+  <ion-button expand="block" fill="outline" (click)="calculate('mul')">
+    Multiplicación
+  </ion-button>
+
+  <ion-button expand="block" fill="outline" (click)="calculate('div')">
+    División
+  </ion-button>
+
+  <ion-card *ngIf="result !== null" class="ion-margin-top">
+    <ion-card-header>
+      <ion-card-title>Resultado</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      {{ operation }}: <strong>{{ result }}</strong>
+    </ion-card-content>
+  </ion-card>
+
+   <ion-button expand="full" fill="outline" color="danger" (click)="calculate('salir')">
+    Salir
+  </ion-button>
+
+</ion-content>

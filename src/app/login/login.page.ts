@@ -19,11 +19,11 @@ export class LoginPage{
 
   constructor(private router: Router){}
   login(){
-    if(this.user === 'admi' && this.password === '123'){
+    if(this.user === 'admin' && this.password === '123'){
       this.Mensaje = '';
       this.router.navigate(['/home']);
     }else{
-      this.Mensaje = 'El usuario o la contraseña es incorrecta'
+      this.Mensaje = 'El usuario o la contraseña es incorrecta, porfavor intente de nuevo';
     }
   }
   

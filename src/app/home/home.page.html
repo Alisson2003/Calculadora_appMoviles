@@ -1,6 +1,6 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>Calculadora Simple</ion-title>
+    <ion-title>Calculadora Cientifica </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -15,21 +15,18 @@
     <ion-input type="number" [(ngModel)]="num2"></ion-input>
   </ion-item>
 
-  <ion-button expand="block" class="ion-margin-top" (click)="calculate('sum')">
-    Sumar
-  </ion-button>
-
-  <ion-button expand="block" fill="outline" (click)="calculate('sub')">
-    Restar
-  </ion-button>
-
-  <ion-button expand="block" fill="outline" (click)="calculate('mul')">
-    Multiplicación
-  </ion-button>
-
-  <ion-button expand="block" fill="outline" (click)="calculate('div')">
-    División
-  </ion-button>
+  <ion-button expand="block" fill="outline" (click)="calculate('sum')">Sumar</ion-button>
+  <ion-button expand="block" fill="outline" (click)="calculate('sub')">Restar</ion-button>
+  <ion-button expand="block" fill="outline" (click)="calculate('mul')">Multiplicar</ion-button>
+  <ion-button expand="block" fill="outline" (click)="calculate('div')">Dividir</ion-button>
+  <ion-button expand="block" fill="outline" (click)="calculate('sqrt')">Raíz Cuadrada</ion-button>
+  <ion-item class="ion-margin-top">
+  <ion-label position="stacked">Valor para funciones trigonométricas</ion-label>
+  <ion-input type="number" [(ngModel)]="value"></ion-input>
+</ion-item>
+  <ion-button expand="block" fill="outline" (click)="calculate('sin')">Seno</ion-button>
+  <ion-button expand="block" fill="outline" (click)="calculate('cos')">Coseno</ion-button>
+  <ion-button expand="block" fill="outline" (click)="calculate('tan')">Tangente</ion-button>
 
   <ion-card *ngIf="result !== null" class="ion-margin-top">
     <ion-card-header>
@@ -40,7 +37,7 @@
     </ion-card-content>
   </ion-card>
 
-   <ion-button expand="full" fill="outline" color="danger" (click)="calculate('salir')">
+  <ion-button expand="block" fill="outline" color="secondary" (click)="calculate('salir')">
     Salir
   </ion-button>
 
